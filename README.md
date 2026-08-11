@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أسواق زاد | شركة رائدة في تجارة التجزئة منذ 1984</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #F5A623;
+      --orange-dark: #E09415;
+      --gray-dark: #4A4A4A;
+      --gray-medium: #5C5C5C;
+      --gray-light: #F5F5F5;
+      --white: #FFFFFF;
+      --text-dark: #2D2D2D;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--gray-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--gray-dark) 0%, #3a3a3a 100%);
+      color: white;
+      padding: 80px 20px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      background: var(--orange);
+      border-radius: 50%;
+      top: -100px; left: -80px;
+      opacity: 0.15;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      background: var(--orange);
+      border-radius: 50%;
+      bottom: -60px; right: -40px;
+      opacity: 0.12;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-icon {
+      width: 70px; height: 70px;
+      background: var(--orange);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(245, 166, 35, 0.35);
+    }
+
+    .logo-text {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo-text span { color: var(--orange); }
+
+    .tagline {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--gray-dark);
+      font-weight: 700;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-size: 18px;
+      margin: 0 auto;
+      display: block;
+      width: fit-content;
+    }
+
+    section { padding: 80px 20px; }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--gray-dark);
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px; height: 4px;
+      background: var(--orange);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Story */
+    .story { background: white; }
+    .story-card {
+      background: var(--gray-light);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border-right: 6px solid var(--orange);
+    }
+    .story-card p { font-size: 18px; margin-bottom: 20px; color: #444; }
+    .highlight {
+      background: var(--orange);
+      color: white;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* Vision Mission Goals */
+    .vmg { background: var(--gray-dark); color: white; }
+    .vmg .section-title { color: white; }
+    .vmg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .vmg-card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 35px 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+    }
+    .vmg-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-6px);
+    }
+    .vmg-icon {
+      width: 60px; height: 60px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .vmg-card h3 { font-size: 22px; margin-bottom: 15px; color: var(--orange); }
+    .vmg-card p { font-size: 16px; opacity: 0.9; line-height: 1.8; }
+
+    /* Values */
+    .values { background: white; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+    .value-card {
+      text-align: center;
+      padding: 35px 20px;
+      border-radius: 18px;
+      background: var(--gray-light);
+      transition: all 0.3s ease;
+    }
+    .value-card:hover {
+      background: var(--orange);
+      color: white;
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(245,166,35,0.3);
+    }
+    .value-card:hover .value-icon {
+      background: white;
+      color: var(--orange);
+    }
+    .value-icon {
+      width: 70px; height: 70px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 20px;
+      transition: all 0.3s ease;
+    }
+    .value-card h4 { font-size: 20px; margin-bottom: 12px; font-weight: 700; }
+    .value-card p { font-size: 15px; opacity: 0.85; }
+
+    /* Products */
+    .products { background: linear-gradient(135deg, #f8f1e3 0%, #fff 100%); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .product-item {
+      background: white;
+      border-radius: 14px;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      border-right: 5px solid var(--orange);
+      transition: all 0.25s ease;
+    }
+    .product-item:hover {
+      transform: translateX(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .product-num {
+      width: 42px; height: 42px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .product-item span { font-size: 17px; font-weight: 600; }
+
+    /* Partners */
+    .partners { background: white; }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+    .partner-logo {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 20px 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .partner-logo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+      border-color: var(--orange);
+    }
+    .partner-logo img {
+      max-width: 120px;
+      max-height: 60px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+    .partner-logo .name {
+      font-size: 13px;
+      color: #555;
+      font-weight: 600;
+    }
+
+    /* Branches */
+    .branches { background: var(--gray-light); }
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .branch-card {
+      background: white;
+      border-radius: 16px;
+      padding: 26px 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      border-right: 5px solid var(--orange);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .branch-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    }
+    .branch-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .branch-card p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+    .branch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--orange);
+      color: white;
+      text-decoration: none;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.25s ease;
+    }
+    .branch-btn:hover {
+      background: var(--orange-dark);
+      transform: scale(1.03);
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--gray-dark);
+      color: white;
+      padding: 70px 20px;
+    }
+    .contact .section-title { color: white; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-item {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .contact-item .icon {
+      width: 55px; height: 55px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 18px;
+    }
+    .contact-item h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--orange);
+    }
+    .contact-item a, .contact-item p {
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .contact-item a:hover { text-decoration: underline; }
+
+    footer {
+      background: #2d2d2d;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 25px;
+      font-size: 15px;
+    }
+    footer strong { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      .logo-text { font-size: 36px; }
+      .tagline { font-size: 18px; }
+      .section-title { font-size: 28px; }
+      .story-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">🛒</div>
+        <div class="logo-text">أسواق <span>زاد</span></div>
+      </div>
+      <p class="tagline">شركة رائدة في مجال تجارة التجزئة</p>
+      <div class="badge">منذ عام 1984</div>
+    </div>
+  </header>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="container">
+      <h2 class="section-title">قصتنا</h2>
+      <div class="story-card">
+        <p>
+          تأسست سلسلة أسواق زاد للمواد الغذائية في عام <strong>1984</strong>، حيث بدأت كمشروع عائلي صغير في مدينة الرياض. ومنذ ذلك الحين، بفضل من الله حققنا تقدمًا كبيرًا، وتمكنا من فتح عدة فروع في مناطق مختلفة لتلبية احتياجات عملائنا في مختلف أنحاء المملكة.
+        </p>
+        <p>
+          مرّت سلسلة أسواق زاد بتطورات كبيرة، حيث بدأنا تحت مسميات عدة في البداية، ولكننا قررنا في السنوات الأخيرة توحيد الاسم بهدف تعزيز الهوية التجارية وتسهيل التعرف على خدماتنا ومنتجاتنا المتنوعة.
+        </p>
+        <p>
+          ونحن اليوم نعد من الشركات الرائدة في مجال تجارة التجزئة، ونمتلك <span class="highlight">أكثر من 10 فروع</span> في أماكن متفرقة، كما نسعى دائمًا لتقديم أفضل المنتجات والخدمات لعملائنا.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION / MISSION / GOALS -->
+  <section class="vmg">
+    <div class="container">
+      <h2 class="section-title">رؤيتنا • رسالتنا • أهدافنا</h2>
+      <div class="vmg-grid">
+        <div class="vmg-card">
+          <div class="vmg-icon">👁</div>
+          <h3>رؤيتنا</h3>
+          <p>أن نكون الوجهة الأولى للتسوّق لكل أسرة، عبر تقديم تجربة متكاملة تجمع بين الجودة العالية، الأسعار المنافسة، والخدمة المتميزة.</p>
+        </div>
+        <div class="vmg-card">
+          <div class="vmg-icon">🤝</div>
+          <h3>رسالتنا</h3>
+          <p>نسعى في زاد إلى تلبية احتياجات عملائنا اليومية من خلال توفير منتجات متنوعة، طازجة، وموثوقة، في بيئة تسوق حديثة ومريحة، مع الالتزام بأعلى معايير الجودة والخدمة.</p>
+        </div>
+        <div class="vmg-card">
+          <div class="vmg-icon">🎯</div>
+          <h3>أهدافنا</h3>
+          <p>تقديم منتجات عالية الجودة بأسعار تنافسية، والحفاظ على أعلى معايير الجودة. كما نسعى لأن نكون جزءًا فعالاً في تحقيق رؤية المملكة 2030 من خلال دعم الاقتصاد الوطني، الاستدامة، الابتكار الرقمي، ودعم المحتوى المحلي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="container">
+      <h2 class="section-title">قيمنا</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">⭐</div>
+          <h4>الجودة</h4>
+          <p>نلتزم بتوفير منتجات مختارة بعناية لضمان أعلى معايير الجودة لعملائنا.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h4>الموثوقية</h4>
+          <p>نبني علاقتنا مع العملاء على الصدق والشفافية، ونفي بوعودنا دائمًا.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">👥</div>
+          <h4>عملاؤنا</h4>
+          <p>العميل محور اهتمامنا. نسعى لتقديم تجربة تسوق مريحة ومميزة تلبي توقعات واحتياجات كل عميل.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📈</div>
+          <h4>التطور</h4>
+          <p>نواكب التطورات ونحدث خدماتنا باستمرار لنواكب تطلعات عملائنا وسوق التجزئة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">ماذا تقدم أسواق زاد؟</h2>
+      <div class="products-grid">
+        <div class="product-item">
+          <div class="product-num">01</div>
+          <span>المنتجات الغذائية الطازجة</span>
+        </div>
+        <div class="product-item">
+          <div class="product-num">02</div>
+          <span>المنتجات الاستهلاكية اليومية</span>
+        </div>
+        <div class="product-item">
+          <div class="product-num">03</div>
+          <span>المخبوزات والحلويات</span>
+        </div>
+        <div class="product-item">
+          <div class="product-num">04</div>
+          <span>منتجات التنظيف المنزلية</span>
+        </div>
+        <div class="product-item">
+          <div class="product-num">05</div>
+          <span>مستحضرات العناية الشخصية</span>
+        </div>
+        <div class="product-item">
+          <div class="product-num">06</div>
+          <span>المنتجات المحلية والمستوردة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS - Local Logos -->
+  <section class="partners">
+    <div class="container">
+      <h2 class="section-title">شركاء النجاح</h2>
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <img src="almarai_logo.png" alt="المراعي">
+          <div class="name">المراعي</div>
+        </div>
+        <div class="partner-logo">
+          <img src="Nestie_logo.png" alt="Nestlé">
+          <div class="name">Nestlé</div>
+        </div>
+        <div class="partner-logo">
+          <img src="pepsiCo_logo.png" alt="PepsiCo">
+          <div class="name">PepsiCo</div>
+        </div>
+        <div class="partner-logo">
+          <img src="Pepsi_logo.png" alt="Pepsi">
+          <div class="name">Pepsi</div>
+        </div>
+        <div class="partner-logo">
+          <img src="cocacola_logo.png" alt="Coca-Cola">
+          <div class="name">كوكا كولا</div>
+        </div>
+        <div class="partner-logo">
+          <img src="unilever_logo.png" alt="Unilever">
+          <div class="name">Unilever</div>
+        </div>
+        <div class="partner-logo">
+          <img src="Sadafco_logo.png" alt="SADAFCO">
+          <div class="name">سدافكو</div>
+        </div>
+        <div class="partner-logo">
+          <img src="NADEC_logo.png" alt="Nadec">
+          <div class="name">نادك</div>
+        </div>
+        <div class="partner-logo">
+          <img src="Alwatania_logo.png" alt="دواجن الوطنية">
+          <div class="name">دواجن الوطنية</div>
+        </div>
+        <div class="partner-logo">
+          <img src="Baja_logo.png" alt="باجة">
+          <div class="name">باجة</div>
+        </div>
+        <div class="partner-logo">
+          <img src="entaj_logo.png" alt="إنتاج">
+          <div class="name">إنتاج</div>
+        </div>
+        <div class="partner-logo">
+          <img src="rotana_logo.png" alt="روتانا">
+          <div class="name">روتانا</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANCHES - Mapped correctly -->
+  <section class="branches" id="branches">
+    <div class="container">
+      <h2 class="section-title">فروعنا</h2>
+      <div class="branches-grid">
+
+        <div class="branch-card">
+          <h4>📍 فرع المنصورة</h4>
+          <p>حي المنصورة – الدائري الجنوبي، الرياض</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/k2gB5UEjuXJvw4KE7?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+        <div class="branch-card">
+          <h4>📍 فرع روشن</h4>
+          <p>حي روشن، الرياض</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/YdPPqSwJuDBX6Ge26?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+        <div class="branch-card">
+          <h4>📍 فرع الميزان</h4>
+          <p>حي الميزان، الرياض</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/pRCJR6J3QfeGgpsv8?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+        <div class="branch-card">
+          <h4>📍 فرع رماح</h4>
+          <p>حي المشرق – رماح، الرياض</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/RKrzr237AHaMmnzc9?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+        <div class="branch-card">
+          <h4>📍 فرع الياسمين</h4>
+          <p>حي الياسمين، الرياض</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/64EajM5oY9qUJDGbA?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+        <div class="branch-card">
+          <h4>📍 فرع طريق مكة</h4>
+          <p>طريق مكة، الرياض</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/5fSuA6daNFcfsHav6?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+        <div class="branch-card">
+          <h4>📍 فرع مطار الملك خالد</h4>
+          <p>أسواق ومخابز زاد – منطقة السحاب / مطار الملك خالد الدولي</p>
+          <a class="branch-btn" href="https://maps.app.goo.gl/RFeh8ZExiQN9aRym9?g_st=iw" target="_blank" rel="noopener">
+            عرض على الخريطة
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="container">
+      <h2 class="section-title">تواصل معنا</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="icon">📞</div>
+          <h4>رقم الجوال</h4>
+          <a href="tel:+966112777118"><span dir="ltr">011 277 7118</span></a>
+        </div>
+        <div class="contact-item">
+          <div class="icon">✉️</div>
+          <h4>البريد الإلكتروني</h4>
+          <a href="mailto:Info@petroluo.com">Info@petroluo.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="icon">📍</div>
+          <h4>الموقع الرئيسي</h4>
+          <p>الدائري الجنوبي، الرياض</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <strong>أسواق زاد</strong> — جميع الحقوق محفوظة</p>
+    <p style="margin-top: 8px; font-size: 14px;">نلبي احتياجك ونزيد عليه</p>
+  </footer>
+
+</body>
+</html>
